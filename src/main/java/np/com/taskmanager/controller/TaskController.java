@@ -11,10 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/task")
 public class TaskController {
 
-	@GetMapping("/hello")
-	public Map<String, String> hello() {
+	@GetMapping("/admin")
+	public Map<String, String> helloAdmin() {
 		Map<String, String> map = new HashMap<>();
-		map.put("message", "hello");
+		map.put("message", "hello admin");
+		return map;
+	}
+
+	@GetMapping("/user")
+	public Map<String, String> helloUser() {
+		Map<String, String> map = new HashMap<>();
+		map.put("message", "hello user");
 		return map;
 	}
 }
