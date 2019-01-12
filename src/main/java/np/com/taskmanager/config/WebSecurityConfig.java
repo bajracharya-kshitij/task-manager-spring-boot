@@ -17,6 +17,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/api/task/admin").hasRole("ADMIN").antMatchers("/api/task/user")
-				.hasRole("USER").and().httpBasic();
+				.hasRole("USER").anyRequest().authenticated().and().httpBasic();
 	}
 }
